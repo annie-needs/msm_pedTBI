@@ -1,0 +1,270 @@
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/train_val_AN.py", line 123, in <module>
+    num_features = samples_train[0]['features'].shape[1]
+                   ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/mnt/ufs18/rs-003/woldring_lab/Members/Needs/msm/traumatic-brain-injury/report.py", line 151, in <module>
+    np.mean(accuracies_val[i]), np.mean(tprs_val[i]), np.mean(fprs_val[i]), np.mean(costs_val[i]),
+                                                              ~~~~~~~~^^^
+KeyError: 0

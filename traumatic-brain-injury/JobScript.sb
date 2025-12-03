@@ -1,0 +1,86 @@
+#!/bin/bash --login
+
+#####################################################################################
+# NOTE: BEFORE RUNNING, CTRL-F 'CHANGE' TO FIND ANY LINES THAT MAY NEED TO BE UPDATED
+#####################################################################################
+
+########## SBATCH Lines for Resource Request ##########
+
+#SBATCH --time=10:00:00               # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --nodes=1                     # number of different nodes - could be an exact number or a range of nodes (same as -N)
+#SBATCH --ntasks=1                    # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --gpus=v100:2                 # number of GPUs )
+#SBATCH --mem-per-gpu=8G             # memory required per allocated CPU (or core) - amount of memory (in bytes)
+#SBATCH --output=MSM_%j.out     # output file (%j will be replaced with job ID)
+#SBATCH --error=MSM_%j.err      # error file (%j will be replaced with job ID)
+#SBATCH --job-name=TBIClass_MSM           # you can give your job a name for easier identification (same as -J)
+
+########## Command Lines for Job Running ##########
+module purge
+module load Miniforge3
+module load CUDA/12.6.0
+
+conda activate basic_env
+
+cd /mnt/research/woldring_lab/Members/Needs/msm/traumatic-brain-injury/
+
+
+mkdir -p bin_k6
+python train_val_k6.py --seed 1 --holdouts TBI01PX01 --num_fits 16384 --output bin_k6/1
+python train_val_k6.py --seed 1 --holdouts TBI01PX02 --num_fits 16384 --output bin_k6/2
+python train_val_k6.py --seed 1 --holdouts TBI01PX03 --num_fits 16384 --output bin_k6/3
+python train_val_k6.py --seed 1 --holdouts TBI02PX01 --num_fits 16384 --output bin_k6/4
+python train_val_k6.py --seed 1 --holdouts TBI01PX02 --num_fits 16384 --output bin_k6/5
+python train_val_k6.py --seed 1 --holdouts TBI03PX01 --num_fits 16384 --output bin_k6/6
+python train_val_k6.py --seed 1 --holdouts TBI04PX01 --num_fits 16384 --output bin_k6/7
+python train_val_k6.py --seed 1 --holdouts TBI04PX02 --num_fits 16384 --output bin_k6/8
+python train_val_k6.py --seed 1 --holdouts TBI05PX01 --num_fits 16384 --output bin_k6/9
+python train_val_k6.py --seed 1 --holdouts TBI05PX02 --num_fits 16384 --output bin_k6/10
+python train_val_k6.py --seed 1 --holdouts TBI06PX01 --num_fits 16384 --output bin_k6/11
+python train_val_k6.py --seed 1 --holdouts TBI06PX02 --num_fits 16384 --output bin_k6/12
+python train_val_k6.py --seed 1 --holdouts TBI06PX03 --num_fits 16384 --output bin_k6/13
+python train_val_k6.py --seed 1 --holdouts TBI07PX01 --num_fits 16384 --output bin_k6/14
+python train_val_k6.py --seed 1 --holdouts TBI08PX01 --num_fits 16384 --output bin_k6/15
+python train_val_k6.py --seed 1 --holdouts TBI09PX01 --num_fits 16384 --output bin_k6/16
+python train_val_k6.py --seed 1 --holdouts TBI09PX02 --num_fits 16384 --output bin_k6/17
+python train_val_k6.py --seed 1 --holdouts TBI09PX03 --num_fits 16384 --output bin_k6/18
+python train_val_k6.py --seed 1 --holdouts TBI10PX01 --num_fits 16384 --output bin_k6/19
+python train_val_k6.py --seed 1 --holdouts TBI11PX01 --num_fits 16384 --output bin_k6/20
+python train_val_k6.py --seed 1 --holdouts TBI12PX01 --num_fits 16384 --output bin_k6/21
+python train_val_k6.py --seed 1 --holdouts TBI13PX01 --num_fits 16384 --output bin_k6/22
+python train_val_k6.py --seed 1 --holdouts TBI13PX02 --num_fits 16384 --output bin_k6/23
+python train_val_k6.py --seed 1 --holdouts TBI13PX03 --num_fits 16384 --output bin_k6/24
+python train_val_k6.py --seed 1 --holdouts TBI14PX01 --num_fits 16384 --output bin_k6/25
+python train_val_k6.py --seed 1 --holdouts TBI14PX02 --num_fits 16384 --output bin_k6/26
+python train_val_k6.py --seed 1 --holdouts TBI14PX03 --num_fits 16384 --output bin_k6/27
+python train_val_k6.py --seed 1 --holdouts TBI15PX01 --num_fits 16384 --output bin_k6/28
+python train_val_k6.py --seed 1 --holdouts TBI15PX02 --num_fits 16384 --output bin_k6/29
+python train_val_k6.py --seed 1 --holdouts TBI16PX01 --num_fits 16384 --output bin_k6/30
+python train_val_k6.py --seed 1 --holdouts TBI16PX02 --num_fits 16384 --output bin_k6/31
+python train_val_k6.py --seed 1 --holdouts TBI16PX03 --num_fits 16384 --output bin_k6/32
+python train_val_k6.py --seed 1 --holdouts TBI17PX01 --num_fits 16384 --output bin_k6/33
+python train_val_k6.py --seed 1 --holdouts TBI18PX01 --num_fits 16384 --output bin_k6/34
+python train_val_k6.py --seed 1 --holdouts TBI18PX02 --num_fits 16384 --output bin_k6/35
+python train_val_k6.py --seed 1 --holdouts TBI19PX01 --num_fits 16384 --output bin_k6/36
+python train_val_k6.py --seed 1 --holdouts TBI20PX01 --num_fits 16384 --output bin_k6/37
+python train_val_k6.py --seed 1 --holdouts TBI20PX02 --num_fits 16384 --output bin_k6/38
+python train_val_k6.py --seed 1 --holdouts TBI20PX03 --num_fits 16384 --output bin_k6/39
+python train_val_k6.py --seed 1 --holdouts TBI21PX01 --num_fits 16384 --output bin_k6/40
+python train_val_k6.py --seed 1 --holdouts TBI21PX02 --num_fits 16384 --output bin_k6/41
+python train_val_k6.py --seed 1 --holdouts TBI22PX01 --num_fits 16384 --output bin_k6/42
+python train_val_k6.py --seed 1 --holdouts TBI22PX02 --num_fits 16384 --output bin_k6/43
+python train_val_k6.py --seed 1 --holdouts TBI22PX03 --num_fits 16384 --output bin_k6/44
+python train_val_k6.py --seed 1 --holdouts TBI23PX01 --num_fits 16384 --output bin_k6/45
+python train_val_k6.py --seed 1 --holdouts TBI23PX03 --num_fits 16384 --output bin_k6/46
+python train_val_k6.py --seed 1 --holdouts TBI24PX01 --num_fits 16384 --output bin_k6/47
+python train_val_k6.py --seed 1 --holdouts TBI25PX01 --num_fits 16384 --output bin_k6/48
+python train_val_k6.py --seed 1 --holdouts TBI26PX01 --num_fits 16384 --output bin_k6/49
+python train_val_k6.py --seed 1 --holdouts TBI26PX02 --num_fits 16384 --output bin_k6/50
+python train_val_k6.py --seed 1 --holdouts TBI27PX01 --num_fits 16384 --output bin_k6/51
+python train_val_k6.py --seed 1 --holdouts TBI28PX01 --num_fits 16384 --output bin_k6/52
+python train_val_k6.py --seed 1 --holdouts TBI28PX02 --num_fits 16384 --output bin_k6/53
+
+
+python report.py > report.csv
+
+echo 'ran'
