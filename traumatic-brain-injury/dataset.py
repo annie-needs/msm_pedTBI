@@ -143,6 +143,7 @@ def weight_samples(samples):
 def normalize_samples(samples_train, samples_holdout):
 
   # Calculate normalization statistics from the training samples
+  # vs = variance
   #
   us = 0.0
   us2 = 0.0

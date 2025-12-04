@@ -20,6 +20,7 @@ import dataplumbing as dp
 import dataset as ds
 import numpy as np
 import torch
+import copy
 
 ##########################################################################################
 # Arguments
@@ -120,7 +121,6 @@ for sample in samples_val:
 
 # Settings
 #
-print(samples_train[0]['features'].shape[1])
 num_features = samples_train[0]['features'].shape[1]
 num_fits = args.num_fits
 
@@ -180,6 +180,14 @@ def accuracy(ls_block, ys_block):  # The binary accuracy is calculated seperate 
   cs_block = (torch.round(ps_block) == torch.round(ys_block)).to(ys_block.dtype)
   return cs_block
 
+# Setting up best_val_loss for model selection
+# and early stopping
+#
+best_val_loss = float('inf')
+best_model_state = None
+patience = 150
+patientce_counter = 0
+
 ##########################################################################################
 # Fit and evaluate model
 ##########################################################################################
@@ -221,7 +229,8 @@ for epoch in range(0, num_epochs):
 
     e_block = torch.sum(es_block)
     e_block.backward()
-
+  
+  optimizer.step()
   i_bestfit = torch.argmin(es_train)  # Very important index selects the best fit to the training data
 
   es_val = 0.0
@@ -243,6 +252,10 @@ for epoch in range(0, num_epochs):
 
       es_val += es_block.detach()
       as_val += as_block.detach()
+
+  # Compute average validation loss 
+  #
+  val_loss = es_val.mean().item()
 
   # Print report
   #
@@ -274,7 +287,24 @@ for epoch in range(0, num_epochs):
       print('Subject', 'Label', 'Weight', 'Prediction', sep=',', file=stream)
       for sample in samples_val:
         print(sample['subject'], float(sample['label']), float(sample['weight']), float(sample['predictions'][i_bestfit]), sep=',', file=stream)
+  
+  # Check if val_loss improved for model selection and early stopping
+  #
+  if val_loss < best_val_loss:
+    best_val_loss = best_val_loss
+    best_model_state = copy.deepcopy(msm.state_dict())
+    patience_counter =0
+    print(f'Epoch {epoch}: new best val loss = {val_loss:.4f}')
+  else:
+    patience_counter += 1
 
-  optimizer.step()
+  # Early stopping check
+  #
+  if patience_counter >= patience:
+    print(f'Early stopping triggered at epoch {epoch}')
+    break
 
-torch.save(msm, args.output+'_model.p')
+# Save the best model
+#
+msm.load_state_dict(best_model_state)
+torch.save(msm, args.output + '_model.p')
