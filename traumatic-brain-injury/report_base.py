@@ -21,14 +21,14 @@ import numpy as np
 costs_train = {}
 accuracies_train = {}
 tprs_train = {}
-fprs_train = {}
+tnrs_train = {}
 for path in glob.glob('bin/*_ps_train.csv'):
   with open(path, 'r') as stream:
     reader = csv.DictReader(stream)
     costs = []
     accuracies = []
     tprs = []
-    fprs = []
+    tnrs = []
     for row in reader:
       label = float(row['Label'])
       weight = float(row['Weight'])
@@ -44,7 +44,7 @@ for path in glob.glob('bin/*_ps_train.csv'):
           100.0*np.equal(np.round(label), np.round(prediction)).astype(np.float64)
         )
       elif label == 0.0:
-        fprs.append(
+        tnrs.append(
           100.0*np.equal(np.round(label), np.round(prediction)).astype(np.float64)
         )
       else:
@@ -69,24 +69,24 @@ for path in glob.glob('bin/*_ps_train.csv'):
     tprs_train[i].append(
       np.mean(tprs)
     )
-  if len(fprs) > 0:
-    if i not in fprs_train:
-      fprs_train[i] = []
-    fprs_train[i].append(
-      np.mean(fprs)
+  if len(tnrs) > 0:
+    if i not in tnrs_train:
+      tnrs_train[i] = []
+    tnrs_train[i].append(
+      np.mean(tnrs)
     )
 
 costs_val = {}
 accuracies_val = {}
 tprs_val = {}
-fprs_val = {}
+tnrs_val = {}
 for path in glob.glob('bin/*_ps_val.csv'):
   with open(path, 'r') as stream:
     reader = csv.DictReader(stream)
     costs = []
     accuracies = []
     tprs = []
-    fprs = []
+    tnrs = []
     for row in reader:
       label = float(row['Label'])
       weight = float(row['Weight'])
@@ -102,7 +102,7 @@ for path in glob.glob('bin/*_ps_val.csv'):
           100.0*np.equal(np.round(label), np.round(prediction)).astype(np.float64)
         )
       elif label == 0.0:
-        fprs.append(
+        tnrs.append(
           100.0*np.equal(np.round(label), np.round(prediction)).astype(np.float64)
         )
       else:
@@ -127,11 +127,11 @@ for path in glob.glob('bin/*_ps_val.csv'):
     tprs_val[i].append(
       np.mean(tprs)
     )
-  if len(fprs) > 0:
-    if i not in fprs_val:
-      fprs_val[i] = []
-    fprs_val[i].append(
-      np.mean(fprs)
+  if len(tnrs) > 0:
+    if i not in tnrs_val:
+      tnrs_val[i] = []
+    tnrs_val[i].append(
+      np.mean(tnrs)
     )
 
 ##########################################################################################
@@ -140,15 +140,15 @@ for path in glob.glob('bin/*_ps_val.csv'):
 
 print(
   'Step',
-  'Accuracy_Train', 'TRP_Train', 'FPR_Train', 'Cost_train',
-  'Accuracy_Val', 'TRP_Val', 'FPR_Val', 'Cost_Val',
+  'Accuracy_Train', 'TRP_Train', 'TNR_Train', 'Cost_train',
+  'Accuracy_Val', 'TRP_Val', 'TNR_Val', 'Cost_Val',
   sep=','
 )
 
 for i in sorted(accuracies_train.keys()):
   print(
     i,
-    np.mean(accuracies_train[i]), np.mean(tprs_train[i]), np.mean(fprs_train[i]), np.mean(costs_train[i]),
-    np.mean(accuracies_val[i]), np.mean(tprs_val[i]), np.mean(fprs_val[i]), np.mean(costs_val[i]),
+    np.mean(accuracies_train[i]), np.mean(tprs_train[i]), np.mean(tnrs_train[i]), np.mean(costs_train[i]),
+    np.mean(accuracies_val[i]), np.mean(tprs_val[i]), np.mean(tnrs_val[i]), np.mean(costs_val[i]),
     sep=','
   )

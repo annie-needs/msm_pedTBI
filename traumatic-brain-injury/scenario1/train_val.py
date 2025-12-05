@@ -12,14 +12,8 @@
 ##########################################################################################
 # Libraries
 ##########################################################################################
-'''
-NOTE: for moving the base script to a subdirectory, need to add the parent directory to the python path with:
-
 import sys
 sys.path.append('..') # adds higher directory to python modules path
-
-ALSO: need to update the called directory for the amino acid reps & dataset path below (see lines 66 & 83)
-'''
 
 import argparse
 import csv
@@ -65,7 +59,7 @@ controls = {}
 
 # Load immune repertoires
 #
-for path in glob.glob('dataset/IGH/*.tsv'):
+for path in glob.glob('../dataset/IGH/*.tsv'):
   cdr3s = dp.load_cdr3s(path, min_length=kmer_size+trim_front+trim_rear, max_length=32)
   cdr3s = dp.trim_cdr3s(cdr3s, trim_front=trim_front, trim_rear=trim_rear)
   kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
@@ -82,7 +76,7 @@ for path in glob.glob('dataset/IGH/*.tsv'):
 
 # Load embeddings
 #
-aminoacids_dict = ds.load_aminoacid_embedding_dict('../aminoacid-representation/atchley_factors_normalized.csv')
+aminoacids_dict = ds.load_aminoacid_embedding_dict('../../aminoacid-representation/atchley_factors_normalized.csv')
 
 # Convert to numeric representations
 #
