@@ -12,7 +12,13 @@ Change Log:
 - changed report.py to say true negative rates (tnrs/TNRS) (rather than false positive rate) because that is what was actually being calculated.  False positive rate is just = (1 - true negative rate). True negative rate is the a metric of specificity. 
 
 Scenario Log:
-1. base (k-mer length = 4)
+1. base with k-mer length = 4 (this is the base code)
 2. base with k-mer length = 5
-3. base with k-mer length = 6
+3. base with k-mer length = 6 (d1, d2, & d9 study data)
 4. base with k-mer length = 7
+5. base with k-mer length = 6 & d1 study data
+6. base with k-mer length = 6 & d2 study data
+7. base with k-mer length = 6 & d9 study data
+8. base with k-mer length = 6 & (d1 & d2) study data
+9. base with k-mer length = 6 & (d1 & d9) study data
+10. base with kmer length = 6 & (d2 & d9) study data

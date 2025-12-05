@@ -13,7 +13,7 @@
 #SBATCH --mem-per-gpu=8G             # memory required per allocated CPU (or core) - amount of memory (in bytes)
 #SBATCH --output=MSM_%j.out     # output file (%j will be replaced with job ID)
 #SBATCH --error=MSM_%j.err      # error file (%j will be replaced with job ID)
-#SBATCH --job-name=scenario1           # you can give your job a name for easier identification (same as -J)
+#SBATCH --job-name=scen4          # you can give your job a name for easier identification (same as -J)
 
 ########## Command Lines for Job Running ##########
 module purge
@@ -22,7 +22,7 @@ module load CUDA/12.6.0
 
 conda activate basic_env
 
-cd /mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario1/ ### CHANGE THE SCENARIO DIR! ###
+cd /mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario4/ ### CHANGE THE SCENARIO DIR! ###
 
 
 mkdir -p bin
