@@ -191,6 +191,7 @@ def accuracy(ls_block, ys_block):  # The binary accuracy is calculated seperate 
 #
 best_val_loss = float('inf')
 best_model_state = None
+best_model_epoch = 0
 patience = 150
 patience_counter = 0
 
@@ -304,20 +305,28 @@ for epoch in range(0, num_epochs):
   if val_loss < best_val_loss:
     best_val_loss = val_loss
     best_model_state = copy.deepcopy(msm.state_dict())
-    patience_counter =0
+    best_model_epoch = epoch
     print(f'Epoch {epoch}: new best val loss = {val_loss:.4f}')
-  else:
-    patience_counter += 1
+    
+    # Only advance the patience counter if beyond 1000 epochs. 
+    if epoch > 1000:     
+        patience_counter =0
+      else:
+        patience_counter += 1
 
   scheduler.step()
 
+  
+  # DECIDED: HOLD OFF ON EARLY STOPPING TIL MODELS COMPARED. STILL KEEP BEST VAL COST MODEL THOUGH
   # Early stopping check
   #
-  if patience_counter >= patience:
-    print(f'Early stopping triggered at epoch {epoch}')
-    break
+  #if patience_counter >= patience:
+    #print(f'Early stopping triggered at epoch {epoch}')
+    #break
+
 
 # Save the best model
 #
 msm.load_state_dict(best_model_state)
 torch.save(msm, args.output + '_model.p')
+print(f'best model saved: {best_model_epoch}')
