@@ -15,3 +15,6 @@ traumatic-brain-injury/scenario7/bin
 traumatic-brain-injury/scenario8/bin
 traumatic-brain-injury/scenario9/bin
 traumatic-brain-injury/scenario10/bin
+traumatic-brain-injury/MSM*
+traumatic-brain-injury/*/MSM*
+traumatic-brain-injury/*/report.csv
