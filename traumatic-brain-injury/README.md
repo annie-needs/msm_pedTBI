@@ -22,3 +22,4 @@ Scenario Log:
 8. base with k-mer length = 6 & (d1 & d2) study data
 9. base with k-mer length = 6 & (d1 & d9) study data
 10. base with kmer length = 6 & (d2 & d9) study data
+11. kmer length = 6, removing control kmers from cases

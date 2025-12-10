@@ -65,6 +65,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
   kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
   kmers = dp.normalize_sample(kmers)
   subject = path.split('/')[-1].split('.')[0]
+  print(subject)
   if subject in Control_cases:
     controls[subject] = kmers
   else: 
@@ -73,6 +74,10 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
 ##########################################################################################
 # Assemble datasets
 ##########################################################################################
+
+# Remove kmers in the controls from the cases
+#
+cases = ds.removeOverlappingKmers(cases, controls)
 
 # Load embeddings
 #

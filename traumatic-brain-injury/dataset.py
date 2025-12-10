@@ -16,6 +16,27 @@ import numpy as np
 # Utilities
 ##########################################################################################
 
+def removeOverlappingKmers(cases, controls):
+
+  # Remove any sequences from the cases that appear in the controls
+  #
+  control_sequences = set()
+
+  for subject, seqs in controls.items():
+    control_sequences.update(seqs.keys())
+
+  filtered_cases = {}
+
+  for subject, seqs in cases.items():
+    filtered_seqs = {
+      seq: qty
+      for seq, qty in seqs.items()
+      if seq not in control_sequences
+    }
+    filtered_cases[subject] = filtered_seqs
+
+  return filtered_cases
+
 def load_aminoacid_embedding_dict(path_embedding):
 
   # Amino acid factors
