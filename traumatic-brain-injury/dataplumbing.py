@@ -70,6 +70,32 @@ def cdr3s_to_kmers(cdr3s, kmer_size):
           kmers[kmer] += quantity
   return kmers
 
+def dropLowCountKmers(kmers, min_count):
+  return None
+ 
+  
+def removeOverlappingKmers(cases, controls):
+
+  # Remove any sequences from the cases that appear in the controls
+  #
+  control_sequences = set()
+
+  for subject, seqs in controls.items():
+    control_sequences.update(seqs.keys())
+
+  filtered_cases = {}
+
+  for subject, seqs in cases.items():
+    filtered_seqs = {
+      seq: qty
+      for seq, qty in seqs.items()
+      if seq not in control_sequences
+    }
+    filtered_cases[subject] = filtered_seqs
+
+  return filtered_cases
+  
+
 def cdr3s_to_motifs(cdr3s, window_size, motif_size):
   templates = []
   for template in list(combinations(range(window_size), motif_size)):

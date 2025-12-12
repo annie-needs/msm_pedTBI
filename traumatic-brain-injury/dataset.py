@@ -16,6 +16,27 @@ import numpy as np
 # Utilities
 ##########################################################################################
 
+def load_aminoacid_embedding_dict(path_embedding):
+
+  # Amino acid factors
+  #
+  names = []
+  factors = []
+  with open(path_embedding, 'r') as stream:
+    for line in stream:
+      rows = line.split(',')
+      names.append(rows[0])
+      factors.append(np.array(rows[1:], dtype=np.float32))
+  names = np.array(names)
+  factors = np.array(factors)
+
+  # Convert into a dictionary
+  #
+  aminoacids_dict = { name: factors[i,:] for i, name in enumerate(names) }
+
+  return aminoacids_dict
+  
+  
 def removeOverlappingKmers(cases, controls):
 
   # Remove any sequences from the cases that appear in the controls
@@ -36,26 +57,7 @@ def removeOverlappingKmers(cases, controls):
     filtered_cases[subject] = filtered_seqs
 
   return filtered_cases
-
-def load_aminoacid_embedding_dict(path_embedding):
-
-  # Amino acid factors
-  #
-  names = []
-  factors = []
-  with open(path_embedding, 'r') as stream:
-    for line in stream:
-      rows = line.split(',')
-      names.append(rows[0])
-      factors.append(np.array(rows[1:], dtype=np.float32))
-  names = np.array(names)
-  factors = np.array(factors)
-
-  # Convert into a dictionary
-  #
-  aminoacids_dict = { name: factors[i,:] for i, name in enumerate(names) }
-
-  return aminoacids_dict
+  
 
 def assemble_samples(cases, controls, aminoacids_dict):
 

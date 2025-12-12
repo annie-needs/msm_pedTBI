@@ -46,7 +46,9 @@ args = parser.parse_args()
 trim_front = 0
 trim_rear = 0
 
-kmer_size = 4
+kmer_size = 6
+
+min_count = 10
 
 # Defining control and case subjects
 #
@@ -63,9 +65,9 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
   cdr3s = dp.load_cdr3s(path, min_length=kmer_size+trim_front+trim_rear, max_length=32)
   cdr3s = dp.trim_cdr3s(cdr3s, trim_front=trim_front, trim_rear=trim_rear)
   kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
+  kmers = dp.dropLowCountKmers(kmers, min_count=min_count)   <<<<----
   kmers = dp.normalize_sample(kmers)
   subject = path.split('/')[-1].split('.')[0]
-  print(subject)
   if subject in Control_cases:
     controls[subject] = kmers
   else: 
@@ -77,7 +79,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
 
 # Remove kmers in the controls from the cases
 #
-cases = ds.removeOverlappingKmers(cases, controls)
+cases = ds.removeOverlappingKmers(cases, controls)  <<<<-------
 
 # Load embeddings
 #
@@ -179,7 +181,7 @@ optimizer = torch.optim.Adam(msm.parameters(), lr=learning_rate)  # Adam is base
 
 # LR Scheduler
 #
-#scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr = learning_rate, epochs = 2048, steps_per_epoch = 1)
+scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr = learning_rate, epochs = 2048, steps_per_epoch = 1)
 
 # Metrics
 #
@@ -307,7 +309,7 @@ for epoch in range(0, num_epochs):
       for sample in samples_val:
         print(sample['subject'], float(sample['label']), float(sample['weight']), float(sample['predictions'][i_bestfit]), sep=',', file=stream)
   
-  # Check if train_loss improved for model selection and early stopping
+  # Check if val_loss improved for model selection and early stopping
   #
   if train_loss < best_train_loss:
     best_train_loss = train_loss
@@ -323,7 +325,7 @@ for epoch in range(0, num_epochs):
     #else:
         #patience_counter += 1 '''
 
-  # scheduler.step()
+  scheduler.step()
 
   
   # DECIDED: HOLD OFF ON EARLY STOPPING TIL MODELS COMPARED. 

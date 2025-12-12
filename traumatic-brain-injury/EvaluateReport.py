@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
-filename = '/mnt/research/woldring_lab/Members/Needs/msm/traumatic-brain-injury/report.csv'
+scenario = 1
+
+filename = f'/mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario{scenario}/report.csv'
 data = pd.read_csv(filename)
 
 fig, ax = plt.subplots(figsize=(10,6))
@@ -13,15 +15,15 @@ ax.set_xlabel('Model Step')
 ax.set_ylabel('Mean Accuracy')
 ax.legend()
  
-plt.savefig('/mnt/research/woldring_lab/Members/Needs/msm/traumatic-brain-injury/AccuracyPlot.png')
+plt.savefig(f'/mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario{scenario}/AccuracyPlot.png')
 
 
 fig2, ax2 = plt.subplots(figsize=(10,6))
 sns.lineplot(data=data, x='Step', y='Cost_train', label='Training data', ax=ax2)
 sns.lineplot(data=data, x='Step', y='Cost_Val', label='Validation data', ax=ax2)
-ax2.set_title('Classification Accuracy, 4-mers, all data, LOOCV')
+ax2.set_title('Classification Cost, 4-mers, all data, LOOCV')
 ax2.set_xlabel('Model Step')
 ax2.set_ylabel('Mean Cost')
 ax2.legend()
  
-plt.savefig('/mnt/research/woldring_lab/Members/Needs/msm/traumatic-brain-injury/CostPlot.png')
+plt.savefig(f'/mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario{scenario}/CostPlot.png')

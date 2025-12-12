@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##########################################################################################
-# Base Modle Author: Jared L. Ostmeyer
+# Base Model Author: Jared L. Ostmeyer
 # Date Started: 2021-11-16
 # Purpose: Train and validate a classifier for immune repertoires
 
@@ -73,6 +73,10 @@ for path in glob.glob('../dataset_d2d9/IGH/*.tsv'):
 ##########################################################################################
 # Assemble datasets
 ##########################################################################################
+
+# Remove kmers in the controls from the cases
+#
+cases = ds.removeOverlappingKmers(cases, controls)
 
 # Load embeddings
 #
@@ -174,7 +178,7 @@ optimizer = torch.optim.Adam(msm.parameters(), lr=learning_rate)  # Adam is base
 
 # LR Scheduler
 #
-scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr = learning_rate, total_steps = 1000)
+#scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr = learning_rate, epochs = 2048, steps_per_epoch = 1)
 
 # Metrics
 #
@@ -186,11 +190,12 @@ def accuracy(ls_block, ys_block):  # The binary accuracy is calculated seperate 
   cs_block = (torch.round(ps_block) == torch.round(ys_block)).to(ys_block.dtype)
   return cs_block
 
-# Setting up best_val_loss for model selection
+# Setting up best_train_loss for model selection
 # and early stopping
 #
-best_val_loss = float('inf')
+best_train_loss = float('inf')
 best_model_state = None
+best_model_epoch = 0
 patience = 150
 patience_counter = 0
 
@@ -240,6 +245,11 @@ for epoch in range(0, num_epochs):
   
   optimizer.step()
 
+  # Compute average training loss & get index of best fit to the training data
+  #
+  train_loss = es_train.mean().item()
+  i_bestfit = torch.argmin(es_train)  # Very important index: selects the best fit to the training data
+
   # Validation block
   #
   es_val = 0.0
@@ -262,10 +272,7 @@ for epoch in range(0, num_epochs):
       es_val += es_block.detach()
       as_val += as_block.detach()
 
-  # Compute average validation loss & get index of best fit to the validation data
-  #
-  val_loss = es_val.mean().item()
-  i_bestfit = torch.argmin(es_val)  # Very important index selects the best fit to the validation data
+
 
 
   # Print report
@@ -299,25 +306,35 @@ for epoch in range(0, num_epochs):
       for sample in samples_val:
         print(sample['subject'], float(sample['label']), float(sample['weight']), float(sample['predictions'][i_bestfit]), sep=',', file=stream)
   
-  # Check if val_loss improved for model selection and early stopping
+  # Check if train_loss improved for model selection and early stopping
   #
-  if val_loss < best_val_loss:
-    best_val_loss = val_loss
+  if train_loss < best_train_loss:
+    best_train_loss = train_loss
     best_model_state = copy.deepcopy(msm.state_dict())
-    patience_counter =0
-    print(f'Epoch {epoch}: new best val loss = {val_loss:.4f}')
-  else:
-    patience_counter += 1
+    best_model_epoch = epoch
+    print(f'Epoch {epoch}: new best training loss = {train_loss:.4f}')
+    
+    # no need for patience counter til adding back early stopping
+    #
+    # Only advance the patience counter if beyond 1000 epochs. 
+    #if epoch > 1000:     
+        #patience_counter = 0
+    #else:
+        #patience_counter += 1 '''
 
-  scheduler.step()
+  # scheduler.step()
 
+  
+  # DECIDED: HOLD OFF ON EARLY STOPPING TIL MODELS COMPARED. 
   # Early stopping check
   #
-  if patience_counter >= patience:
-    print(f'Early stopping triggered at epoch {epoch}')
-    break
+  #if patience_counter >= patience:
+    #print(f'Early stopping triggered at epoch {epoch}')
+    #break
+
 
 # Save the best model
 #
 msm.load_state_dict(best_model_state)
 torch.save(msm, args.output + '_model.p')
+print(f'best model saved at epoch # {best_model_epoch}')
