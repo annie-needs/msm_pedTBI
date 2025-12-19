@@ -28,7 +28,7 @@ cd /mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario6/ ### CHANGE
 mkdir -p bin
 
 python train_val.py --seed 1 --holdouts TBI01PX02 --num_fits 16384 --output bin/1
-python train_val.py --seed 1 --holdouts TBI01PX02 --num_fits 16384 --output bin/2
+python train_val.py --seed 1 --holdouts TBI02PX02 --num_fits 16384 --output bin/2
 python train_val.py --seed 1 --holdouts TBI04PX02 --num_fits 16384 --output bin/3
 python train_val.py --seed 1 --holdouts TBI05PX02 --num_fits 16384 --output bin/4
 python train_val.py --seed 1 --holdouts TBI06PX02 --num_fits 16384 --output bin/5

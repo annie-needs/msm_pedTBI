@@ -30,7 +30,7 @@ python train_val.py --seed 1 --holdouts TBI01PX01 --num_fits 16384 --output bin/
 python train_val.py --seed 1 --holdouts TBI01PX02 --num_fits 16384 --output bin/2
 python train_val.py --seed 1 --holdouts TBI01PX03 --num_fits 16384 --output bin/3
 python train_val.py --seed 1 --holdouts TBI02PX01 --num_fits 16384 --output bin/4
-python train_val.py --seed 1 --holdouts TBI01PX02 --num_fits 16384 --output bin/5
+python train_val.py --seed 1 --holdouts TBI02PX02 --num_fits 16384 --output bin/5
 python train_val.py --seed 1 --holdouts TBI03PX01 --num_fits 16384 --output bin/6
 python train_val.py --seed 1 --holdouts TBI04PX01 --num_fits 16384 --output bin/7
 python train_val.py --seed 1 --holdouts TBI04PX02 --num_fits 16384 --output bin/8

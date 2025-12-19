@@ -23,4 +23,16 @@ Scenario Log:
 9. base with k-mer length = 6 & (d1 & d9) study data, removing control kmers from cases
 10. base with kmer length = 6 & (d2 & d9) study data, removing control kmers from cases
 11. kmer length = 6, removing control kmers from cases
-12. kmer length = 6, removing control kmers from cases, removing low quantitiies (<10) <<<----
+
+12. kmer length = 6, removing low quantities (<5)
+13. kmer length = 6, removing low quantities (<5), removing control kmers from cases 
+14. kmer length = 6, d9 study data, using d1 as controls, removing "control" kmers from cases
+15. kmer length = 6, d9 study data, using d1 as controls, removing low quantities (<5) 
+16. kmer length = 6, d9 study data, using d1 as controls, removing low quantities (<5), removing "control" kmers from cases
+17. kmer length = 6, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
+18. kmer length = 6, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample, num_fits reduced by factor of 10 (num_fits = 1,638)
+19. kmer length = 6, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample, num_fits reduced by factor of 2 (num_fits = 8,192)
+20. kmer length = 6, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample, num_fits increased by factor of 1.5 (num_fits = 24,576)
+21. MOTIF length = 4 w window size = 6, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
+
+note: up thru 21, dropping low quantity kmers. Could change to drop low quantity CDR3s (move line up b4 kmer splits)

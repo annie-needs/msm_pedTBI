@@ -48,7 +48,7 @@ trim_rear = 0
 
 kmer_size = 6
 
-min_count = 10
+min_count = 5
 
 # Defining control and case subjects
 #
@@ -65,7 +65,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
   cdr3s = dp.load_cdr3s(path, min_length=kmer_size+trim_front+trim_rear, max_length=32)
   cdr3s = dp.trim_cdr3s(cdr3s, trim_front=trim_front, trim_rear=trim_rear)
   kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
-  kmers = dp.dropLowCountKmers(kmers, min_count=min_count)   <<<<----
+  kmers = dp.dropLowCountKmers(kmers, min_count=min_count)
   kmers = dp.normalize_sample(kmers)
   subject = path.split('/')[-1].split('.')[0]
   if subject in Control_cases:
@@ -79,7 +79,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
 
 # Remove kmers in the controls from the cases
 #
-cases = ds.removeOverlappingKmers(cases, controls)  <<<<-------
+#cases = ds.removeOverlappingKmers(cases, controls)  <<<<-------
 
 # Load embeddings
 #

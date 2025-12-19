@@ -37,25 +37,29 @@ def load_aminoacid_embedding_dict(path_embedding):
   return aminoacids_dict
   
   
-def removeOverlappingKmers(cases, controls):
+def removeOverlappingKmers(cases, controls, holdout = None):
 
   # Remove any sequences from the cases that appear in the controls
   #
   control_sequences = set()
 
   for subject, seqs in controls.items():
-    control_sequences.update(seqs.keys())
-
+    if subject != holdout:
+      control_sequences.update(seqs.keys())
+    else:
+      continue
   filtered_cases = {}
 
   for subject, seqs in cases.items():
-    filtered_seqs = {
-      seq: qty
-      for seq, qty in seqs.items()
-      if seq not in control_sequences
-    }
-    filtered_cases[subject] = filtered_seqs
-
+    if subject != holdout:
+      filtered_seqs = {
+        seq: qty
+        for seq, qty in seqs.items()
+        if seq not in control_sequences
+      }
+      filtered_cases[subject] = filtered_seqs
+    else: 
+      continue
   return filtered_cases
   
 
