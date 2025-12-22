@@ -6,23 +6,25 @@ import os
 import pandas as pd 
 
 parent_dir = os.getcwd()
-n_scenarios = 11 
+n_scenarios = 21
 
 output_csv = 'scenario_comparison.csv'
 
 rows = []
 
 for i in range(1, n_scenarios+1):
-    scenario_name = f'scenario{i}'
-    scenario_dir = os.path.join(parent_dir,scenario_name)
-    report_path = os.path.join(scenario_dir, 'report.csv')
+    if i != 13: # skip scenario 13 bc it had an error & didn't run properly
+        scenario_name = f'scenario{i}'
+        print(scenario_name)
+        scenario_dir = os.path.join(parent_dir,scenario_name)
+        report_path = os.path.join(scenario_dir, 'report.csv')
 
-    df = pd.read_csv(report_path)
+        df = pd.read_csv(report_path)
 
-    best_row = df.loc[df['Cost_train'].idxmin()].copy()
-    best_row['Scenario'] = scenario_name
-    
-    rows.append(best_row)
+        best_row = df.loc[df['Cost_train'].idxmin()].copy()
+        best_row['Scenario'] = scenario_name
+        
+        rows.append(best_row)
 
 if rows: 
     comparison_df = pd.DataFrame(rows)

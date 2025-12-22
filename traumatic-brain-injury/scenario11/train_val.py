@@ -76,12 +76,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
 
 # Remove kmers in the controls from the cases
 #
-for subject, seqs in cases.items():
-  print(subject, len(seqs.keys()))
-print('new')
 cases = ds.removeOverlappingKmers(cases, controls)
-for subject, seqs in cases.items():
-  print(subject, len(seqs.keys()))
 
 # Load embeddings
 #

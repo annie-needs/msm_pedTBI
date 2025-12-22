@@ -48,18 +48,20 @@ def removeOverlappingKmers(cases, controls, holdout = None):
       control_sequences.update(seqs.keys())
     else:
       continue
+  
   filtered_cases = {}
 
   for subject, seqs in cases.items():
-    if subject != holdout:
+    if subject == holdout:
+      filtered_cases[subject] = seqs
+    else: 
       filtered_seqs = {
         seq: qty
         for seq, qty in seqs.items()
         if seq not in control_sequences
       }
-      filtered_cases[subject] = filtered_seqs
-    else: 
-      continue
+      filtered_cases[subject] = filtered_seqs  
+      
   return filtered_cases
   
 
