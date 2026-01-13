@@ -66,7 +66,6 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
   #kmers = dp.dropLowCountKmers(kmers, min_count)
   kmers = dp.normalize_sample(kmers)
   subject = path.split('/')[-1].split('.')[0]
-  print(subject)
   if subject in Control_cases:
     controls[subject] = kmers
   else: 

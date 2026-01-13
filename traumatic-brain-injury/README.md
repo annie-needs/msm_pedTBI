@@ -23,7 +23,6 @@ Scenario Log:
 9. base with k-mer length = 6 & (d1 & d9) study data, removing control kmers from cases
 10. base with kmer length = 6 & (d2 & d9) study data, removing control kmers from cases
 11. kmer length = 6, removing control kmers from cases
-
 12. kmer length = 6, removing low quantities (<5)
 13. kmer length = 6, removing low quantities (<5), removing control kmers from cases 
 14. kmer length = 6, d9 study data, using d1 as controls, removing "control" kmers from cases
