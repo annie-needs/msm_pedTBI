@@ -48,6 +48,11 @@ trim_rear = 0
 
 kmer_size = 6
 
+# Settings for using motif repersentation 
+#
+motif_size = 5
+window_size = 7
+
 min_count = 5 
 
 # Defining control and case subjects
@@ -61,10 +66,11 @@ controls = {}
 
 # Load immune repertoires
 #
-for path in glob.glob('../dataset/IGH/*.tsv'):
+for path in glob.glob('../dataset_d9/IGH/*.tsv'):
   cdr3s = dp.load_cdr3s(path, min_length=kmer_size+trim_front+trim_rear, max_length=32)
   cdr3s = dp.trim_cdr3s(cdr3s, trim_front=trim_front, trim_rear=trim_rear)
-  kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
+  kmers = dp.cdr3s_to_motifs(cdr3s, window_size, motif_size)
+  #kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
   kmers = dp.dropLowCountKmers(kmers, min_count)
   kmers = dp.normalize_sample(kmers)
   subject = path.split('/')[-1].split('.')[0]
@@ -79,7 +85,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
 
 # Remove kmers in the controls from the cases
 #
-cases = ds.removeOverlappingKmers(cases, controls)
+cases = ds.removeOverlappingKmers(cases, controls, args.holdouts)
 
 # Load embeddings
 #
@@ -88,16 +94,6 @@ aminoacids_dict = ds.load_aminoacid_embedding_dict('../../aminoacid-representati
 # Convert to numeric representations
 #
 samples = ds.assemble_samples(cases, controls, aminoacids_dict)
-
-# Filter out samples with 0 features after assembling 
-#
-filtered = []
-for s in samples:
-  if s['features'].shape[0]==0:
-    print(f'skipping subject {s['subject']}: 0 features after processing')
-  else:
-    filtered.append(s) 
-samples = filtered
 
 # Split into a training and validation cohort
 #

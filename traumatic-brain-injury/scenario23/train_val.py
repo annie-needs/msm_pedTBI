@@ -46,13 +46,14 @@ args = parser.parse_args()
 trim_front = 0
 trim_rear = 0
 
-kmer_size = 6
+kmer_size = 7
 
 min_count = 5 
 
 # Defining control and case subjects
+# CHANGED TO BE D1 SAMPLES! 
 #
-Control_cases = ['TBI07PX01', 'TBI08PX01', 'TBI10PX01', 'TBI11PX01', 'TBI12PX01', 'TBI17PX01', 'TBI19PX01', 'TBI24PX01', 'TBI25PX01', 'TBI27PX01']
+Control_cases = ['TBI01PX01', 'TBI02PX01', 'TBI03PX01', 'TBI04PX01', 'TBI05PX01', 'TBI06PX01', 'TBI09PX01', 'TBI13PX01', 'TBI14PX01', 'TBI15PX01', 'TBI16PX01', 'TBI18PX01', 'TBI20PX01', 'TBI21PX01', 'TBI22PX01', 'TBI23PX01', 'TBI26PX01', 'TBI28PX01']
 
 # To hold sequences from each subject
 #
@@ -61,11 +62,11 @@ controls = {}
 
 # Load immune repertoires
 #
-for path in glob.glob('../dataset/IGH/*.tsv'):
+for path in glob.glob('../dataset_d1control_d9cases/IGH/*.tsv'):
   cdr3s = dp.load_cdr3s(path, min_length=kmer_size+trim_front+trim_rear, max_length=32)
   cdr3s = dp.trim_cdr3s(cdr3s, trim_front=trim_front, trim_rear=trim_rear)
+  cdr3s = dp.dropLowCountKmers(cdr3s, min_count) # removing low count cdr3s (disregard fxn name)
   kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
-  kmers = dp.dropLowCountKmers(kmers, min_count)
   kmers = dp.normalize_sample(kmers)
   subject = path.split('/')[-1].split('.')[0]
   if subject in Control_cases:
@@ -79,7 +80,7 @@ for path in glob.glob('../dataset/IGH/*.tsv'):
 
 # Remove kmers in the controls from the cases
 #
-cases = ds.removeOverlappingKmers(cases, controls)
+#cases = ds.removeOverlappingKmers(cases, controls)
 
 # Load embeddings
 #
@@ -88,16 +89,6 @@ aminoacids_dict = ds.load_aminoacid_embedding_dict('../../aminoacid-representati
 # Convert to numeric representations
 #
 samples = ds.assemble_samples(cases, controls, aminoacids_dict)
-
-# Filter out samples with 0 features after assembling 
-#
-filtered = []
-for s in samples:
-  if s['features'].shape[0]==0:
-    print(f'skipping subject {s['subject']}: 0 features after processing')
-  else:
-    filtered.append(s) 
-samples = filtered
 
 # Split into a training and validation cohort
 #
