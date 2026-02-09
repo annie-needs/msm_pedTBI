@@ -6,14 +6,14 @@ import os
 import pandas as pd 
 
 parent_dir = os.getcwd()
-n_scenarios = 21
+n_scenarios = 27
 
 output_csv = 'scenario_comparison.csv'
 
 rows = []
 
 for i in range(1, n_scenarios+1):
-    if i == 13:
+    if i == 13 or i == 23 or i == 27:
         continue 
     
     scenario_name = f'scenario{i}'

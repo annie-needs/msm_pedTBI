@@ -37,7 +37,7 @@ note: up thru 21, dropping low quantity kmers. Could change to drop low quantity
 
 Making edits based on performance of scenarios 1-21
 22. kmer length = 7, d9 study data, using d1 as controls, removing low quantities (<5) [scen15 but k=7]
-23. kmer length = 7, d9 study data, using d1 as controls, removing low quantity **CDRs** (<5)
+23. kmer length = 7, d9 study data, using d1 as controls, removing low quantity **CDRs** (<2)
 24. MOTIF length = 3 with window size = 5, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 25. MOTIF length = 5 with window size = 7, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 26. MOTIF length = 4 with window size = 6, d9 study data, removing low quantity **CDRs** (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample

@@ -22,7 +22,7 @@ module load CUDA/12.6.0
 
 conda activate basic_env
 
-cd /mnt/scratch/needsang/msm_pedTBI/traumatic-brain-injury/scenario26/ ### CHANGE THE SCENARIO DIR! ###
+cd /mnt/research/woldring_lab/Members/Needs/msm_pedTBI/traumatic-brain-injury/scenario26/ ### CHANGE THE SCENARIO DIR! ###
 
 
 mkdir -p bin

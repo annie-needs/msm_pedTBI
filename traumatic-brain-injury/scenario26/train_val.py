@@ -69,7 +69,7 @@ controls = {}
 for path in glob.glob('../dataset_d9/IGH/*.tsv'):
   cdr3s = dp.load_cdr3s(path, min_length=kmer_size+trim_front+trim_rear, max_length=32)
   cdr3s = dp.trim_cdr3s(cdr3s, trim_front=trim_front, trim_rear=trim_rear)
-  cdr3s = dp.dropLowCountKmers(kmers, min_count) # drop low count cdr3s
+  cdr3s = dp.dropLowCountKmers(cdr3s, min_count) # drop low count cdr3s
   kmers = dp.cdr3s_to_motifs(cdr3s, window_size, motif_size)
   #kmers = dp.cdr3s_to_kmers(cdr3s, kmer_size)
   kmers = dp.dropLowCountKmers(kmers, min_count)
