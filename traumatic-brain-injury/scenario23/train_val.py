@@ -48,7 +48,7 @@ trim_rear = 0
 
 kmer_size = 7
 
-min_count = 5 
+min_count = 2 
 
 # Defining control and case subjects
 # CHANGED TO BE D1 SAMPLES! 
@@ -85,6 +85,12 @@ for path in glob.glob('../dataset_d1control_d9cases/IGH/*.tsv'):
 # Load embeddings
 #
 aminoacids_dict = ds.load_aminoacid_embedding_dict('../../aminoacid-representation/atchley_factors_normalized.csv')
+
+print("--- Data Sparsity Check ---")
+for sub, seqs in cases.items():
+    print(f"Case {sub}: {len(seqs)} sequences")
+for sub, seqs in controls.items():
+    print(f"Control {sub}: {len(seqs)} sequences")
 
 # Convert to numeric representations
 #

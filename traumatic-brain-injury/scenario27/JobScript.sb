@@ -26,25 +26,32 @@ cd /mnt/research/woldring_lab/Members/Needs/msm_pedTBI/traumatic-brain-injury/sc
 
 
 mkdir -p bin
-python train_val.py --seed 1 --holdouts TBI01PX03 --num_fits 16384 --output bin/1
-python train_val.py --seed 1 --holdouts TBI06PX03 --num_fits 16384 --output bin/2
-python train_val.py --seed 1 --holdouts TBI07PX01 --num_fits 16384 --output bin/3
-python train_val.py --seed 1 --holdouts TBI08PX01 --num_fits 16384 --output bin/4
-python train_val.py --seed 1 --holdouts TBI09PX03 --num_fits 16384 --output bin/5
-python train_val.py --seed 1 --holdouts TBI10PX01 --num_fits 16384 --output bin/6
-python train_val.py --seed 1 --holdouts TBI11PX01 --num_fits 16384 --output bin/7
-python train_val.py --seed 1 --holdouts TBI12PX01 --num_fits 16384 --output bin/8
-python train_val.py --seed 1 --holdouts TBI13PX03 --num_fits 16384 --output bin/9
-python train_val.py --seed 1 --holdouts TBI14PX03 --num_fits 16384 --output bin/10
-python train_val.py --seed 1 --holdouts TBI16PX03 --num_fits 16384 --output bin/11
-python train_val.py --seed 1 --holdouts TBI17PX01 --num_fits 16384 --output bin/12
-python train_val.py --seed 1 --holdouts TBI19PX01 --num_fits 16384 --output bin/13
-python train_val.py --seed 1 --holdouts TBI20PX03 --num_fits 16384 --output bin/14
-python train_val.py --seed 1 --holdouts TBI22PX03 --num_fits 16384 --output bin/15
-python train_val.py --seed 1 --holdouts TBI23PX03 --num_fits 16384 --output bin/16
-python train_val.py --seed 1 --holdouts TBI24PX01 --num_fits 16384 --output bin/17
-python train_val.py --seed 1 --holdouts TBI25PX01 --num_fits 16384 --output bin/18
-python train_val.py --seed 1 --holdouts TBI27PX01 --num_fits 16384 --output bin/19
+python train_val.py --seed 1 --holdouts TBI01PX01 --num_fits 16384 --output bin/1
+python train_val.py --seed 1 --holdouts TBI01PX03 --num_fits 16384 --output bin/2
+python train_val.py --seed 1 --holdouts TBI02PX01 --num_fits 16384 --output bin/3
+python train_val.py --seed 1 --holdouts TBI04PX01 --num_fits 16384 --output bin/4
+python train_val.py --seed 1 --holdouts TBI05PX01 --num_fits 16384 --output bin/5
+python train_val.py --seed 1 --holdouts TBI06PX01 --num_fits 16384 --output bin/6
+python train_val.py --seed 1 --holdouts TBI06PX03 --num_fits 16384 --output bin/7
+python train_val.py --seed 1 --holdouts TBI09PX01 --num_fits 16384 --output bin/8
+python train_val.py --seed 1 --holdouts TBI09PX03 --num_fits 16384 --output bin/9
+python train_val.py --seed 1 --holdouts TBI13PX01 --num_fits 16384 --output bin/10
+python train_val.py --seed 1 --holdouts TBI13PX03 --num_fits 16384 --output bin/11
+python train_val.py --seed 1 --holdouts TBI14PX01 --num_fits 16384 --output bin/12
+python train_val.py --seed 1 --holdouts TBI14PX03 --num_fits 16384 --output bin/13
+python train_val.py --seed 1 --holdouts TBI15PX01 --num_fits 16384 --output bin/14
+python train_val.py --seed 1 --holdouts TBI16PX01 --num_fits 16384 --output bin/15
+python train_val.py --seed 1 --holdouts TBI16PX03 --num_fits 16384 --output bin/16
+python train_val.py --seed 1 --holdouts TBI18PX01 --num_fits 16384 --output bin/17
+python train_val.py --seed 1 --holdouts TBI20PX01 --num_fits 16384 --output bin/18
+python train_val.py --seed 1 --holdouts TBI20PX03 --num_fits 16384 --output bin/19
+python train_val.py --seed 1 --holdouts TBI21PX01 --num_fits 16384 --output bin/20
+python train_val.py --seed 1 --holdouts TBI22PX01 --num_fits 16384 --output bin/21
+python train_val.py --seed 1 --holdouts TBI22PX03 --num_fits 16384 --output bin/22
+python train_val.py --seed 1 --holdouts TBI23PX01 --num_fits 16384 --output bin/23
+python train_val.py --seed 1 --holdouts TBI23PX03 --num_fits 16384 --output bin/24
+python train_val.py --seed 1 --holdouts TBI26PX01 --num_fits 16384 --output bin/25
+python train_val.py --seed 1 --holdouts TBI28PX01 --num_fits 16384 --output bin/26
 
 
 python report.py > report.csv

@@ -286,10 +286,7 @@ for epoch in range(0, num_epochs):
 
 
   # Print report
-  #
-  print(i_bestfit)
-  i_bestfit = int(i_bestfit)
-  
+  #  
   print(
     'Epoch:', epoch,
     'Accuracy (train):', round(100.0*float(as_train[i_bestfit]), 2), '%',

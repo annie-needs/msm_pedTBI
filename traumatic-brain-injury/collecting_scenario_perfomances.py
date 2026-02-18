@@ -3,30 +3,40 @@
 # Objective: make a csv to compare the best training loss iterations for each scenario to appropriately compare the different scenarios' model performance. 
 
 import os 
+from pathlib import Path
 import pandas as pd 
 
 parent_dir = os.getcwd()
-n_scenarios = 27
 
-output_csv = 'scenario_comparison.csv'
+output_csv = 'scenario_comparisons_18Feb2026.csv'
 
 rows = []
 
-for i in range(1, n_scenarios+1):
-    if i == 13 or i == 23 or i == 27:
-        continue 
-    
+for i in range(1, 56):
+    if i == 36:
+        continue
+
     scenario_name = f'scenario{i}'
     print(scenario_name)
     scenario_dir = os.path.join(parent_dir,scenario_name)
     report_path = os.path.join(scenario_dir, 'report.csv')
-
-    df = pd.read_csv(report_path)
-
-    best_row = df.loc[df['Cost_train'].idxmin()].copy()
-    best_row['Scenario'] = scenario_name
+    
+    if Path(report_path).exists():
         
-    rows.append(best_row)
+        df = pd.read_csv(report_path)
+
+        if df.shape[0] > 1:
+            best_row = df.loc[df['Cost_Val'].idxmin()].copy()
+            best_row['Scenario'] = scenario_name
+        
+            rows.append(best_row)
+        else:
+            print(f"{scenario_name} did not run.")
+            continue
+    else:
+        print(f"{scenario_name} has not been submitted.")
+        continue
+
 
 if rows: 
     comparison_df = pd.DataFrame(rows)

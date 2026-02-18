@@ -105,7 +105,10 @@ def assemble_samples(cases, controls, aminoacids_dict):
 
     u = np.mean(xs[:,-1])
     v = np.var(xs[:,-1])
-    xs[:,-1] = (xs[:,-1]-u)/np.sqrt(v)
+    if v > 1e-10:
+      xs[:,-1] = (xs[:,-1]-u)/np.sqrt(v)
+    else:
+      xs[:,-1] = 0.0  # Setting the feature to 0 since vairance ~ 0 
 
     samples.append(
       {
@@ -132,7 +135,11 @@ def assemble_samples(cases, controls, aminoacids_dict):
 
     u = np.mean(xs[:,-1])
     v = np.var(xs[:,-1])
-    xs[:,-1] = (xs[:,-1]-u)/np.sqrt(v)
+    if v > 1e-10:
+      xs[:,-1] = (xs[:,-1]-u)/np.sqrt(v)
+    else:
+      xs[:,-1] = 0.0  # Setting the feature to 0 since vairance ~ 0 
+
 
     samples.append(
       {

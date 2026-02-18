@@ -48,7 +48,7 @@ trim_rear = 0
 
 kmer_size = 6
 
-min_count = 5 
+min_count = 2 
 
 # Defining control and case subjects
 #
@@ -85,6 +85,12 @@ cases = ds.removeOverlappingKmers(cases, controls)
 #
 aminoacids_dict = ds.load_aminoacid_embedding_dict('../../aminoacid-representation/atchley_factors_normalized.csv')
 
+print("--- Data Sparsity Check ---")
+for sub, seqs in cases.items():
+    print(f"Case {sub}: {len(seqs)} sequences")
+for sub, seqs in controls.items():
+    print(f"Control {sub}: {len(seqs)} sequences")
+
 # Convert to numeric representations
 #
 samples = ds.assemble_samples(cases, controls, aminoacids_dict)
@@ -94,7 +100,7 @@ samples = ds.assemble_samples(cases, controls, aminoacids_dict)
 filtered = []
 for s in samples:
   if s['features'].shape[0]==0:
-    print(f'skipping subject {s['subject']}: 0 features after processing')
+    print(f"skipping subject {s['subject']}: 0 features after processing")
   else:
     filtered.append(s) 
 samples = filtered

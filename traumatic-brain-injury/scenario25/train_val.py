@@ -36,7 +36,7 @@ parser.add_argument('--seed', help='Seed value for randomly initializing fits', 
 parser.add_argument('--device', help='Examples are cuda:0 or cpu', type=str, default='cuda:0')
 parser.add_argument('--num_fits', help='Number of fits to the training data', type=int, default=2**17)
 args = parser.parse_args()
-
+mot
 ##########################################################################################
 # Assemble sequences
 ##########################################################################################

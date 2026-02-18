@@ -4,7 +4,7 @@ editing the max snippet model to use the BCR sequences from pediatric TBI patien
 
 Change Log:
 - I edited the load_cdr3 function for my data. 
-- changed the code to save the best_val_loss model (rather than the last epoch model) > then changed to save thte best_train_loss model
+- changed the code to save the best_val_loss model (rather than the last epoch model) > then changed to save the best_train_loss model
 - implemented early stopping > then removed while testing
 - moved the optimizer.step() command to after the training block (rather than after validation block) to update the model weights before validating
 - Added LR scheduler > then removed because performance got worse
@@ -24,7 +24,7 @@ Scenario Log:
 10. base with kmer length = 6 & (d2 & d9) study data, removing control kmers from cases
 11. kmer length = 6, removing control kmers from cases
 12. kmer length = 6, removing low quantities (<5)
-13. **WILL NOT RUN** kmer length = 6, removing low quantities (<5), removing control kmers from cases 
+13. kmer length = 6, removing low quantities (<**2**), removing control kmers from cases (changed min_count bc otherwise removed all sequences from several samples.)
 14. kmer length = 6, d9 study data, using d1 as controls, removing "control" kmers from cases
 15. kmer length = 6, d9 study data, using d1 as controls, removing low quantities (<5) 
 16. kmer length = 6, d9 study data, using d1 as controls, removing low quantities (<5), removing "control" kmers from cases
@@ -37,8 +37,40 @@ note: up thru 21, dropping low quantity kmers. Could change to drop low quantity
 
 Making edits based on performance of scenarios 1-21
 22. kmer length = 7, d9 study data, using d1 as controls, removing low quantities (<5) [scen15 but k=7]
-23. kmer length = 7, d9 study data, using d1 as controls, removing low quantity **CDRs** (<2)
+23. kmer length = 7, d9 study data, using d1 as controls, removing low quantity **CDRs** (<**2**)(changed min_count bc otherwise removed all sequences from several samples.)
 24. MOTIF length = 3 with window size = 5, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 25. MOTIF length = 5 with window size = 7, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 26. MOTIF length = 4 with window size = 6, d9 study data, removing low quantity **CDRs** (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
+J
 27. MOTIF length = 4 with window size = 6, d9 study data, **using d1 as controls**, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
+
+for scenarios 28 - 56:
+Run 28: Motif= 3, Window=4, MinCount=2
+Run 29: Motif= 3, Window=4, MinCount=5
+Run 30: Motif= 3, Window=5, MinCount=2
+Run 31: Motif= 3, Window=5, MinCount=5
+Run 32: Motif= 3, Window=6, MinCount=2
+Run 33: Motif= 3, Window=6, MinCount=5
+Run 34: Motif= 3, Window=7, MinCount=2
+Run 35: Motif= 3, Window=7, MinCount=5
+Run 36: Motif= 3, Window=8, MinCount=2
+Run 37: Motif= 3, Window=8, MinCount=5
+Run 38: Motif= 4, Window=4, MinCount=2
+Run 39: Motif= 4, Window=4, MinCount=5
+Run 40: Motif= 4, Window=5, MinCount=2
+Run 41: Motif= 4, Window=5, MinCount=5
+Run 42: Motif= 4, Window=6, MinCount=2
+Run 43: Motif= 4, Window=6, MinCount=5
+Run 44: Motif= 4, Window=7, MinCount=2
+Run 45: Motif= 4, Window=7, MinCount=5
+Run 46: Motif= 4, Window=8, MinCount=2
+Run 47: Motif= 4, Window=8, MinCount=5
+Run 48: Motif= 5, Window=5, MinCount=2
+Run 49: Motif= 5, Window=5, MinCount=5
+Run 50: Motif= 5, Window=6, MinCount=2
+Run 51: Motif= 5, Window=6, MinCount=5
+Run 52: Motif= 5, Window=7, MinCount=2
+Run 53: Motif= 5, Window=7, MinCount=5
+Run 54: Motif= 5, Window=8, MinCount=2
+Run 55: Motif= 5, Window=8, MinCount=5
+all with sedation cohort as controls
