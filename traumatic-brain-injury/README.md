@@ -12,7 +12,7 @@ Change Log:
 - Changed output weights, bias, and report to be based on validation fit with lowest entropy loss (rather than training fit with lowest entropy loss) > then switched back because with LOOV the validation set can get lucky. 
 - changed report.py to say true negative rates (tnrs/TNRS) (rather than false positive rate) because that is what was actually being calculated.  False positive rate is just = (1 - true negative rate). True negative rate is the a metric of specificity. 
 
-Scenario Log:
+Scenario Log (for scenarios 28 - 56: all with sedation cohort as controls):
 1. base with k-mer length = 4 (this is the base code)
 2. base with k-mer length = 5
 3. base with k-mer length = 6 (d1, d2, & d9 study data)
@@ -44,8 +44,6 @@ Making edits based on performance of scenarios 1-21
 26. MOTIF length = 4 with window size = 6, d9 study data, removing low quantity **CDRs** (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 J
 27. MOTIF length = 4 with window size = 6, d9 study data, **using d1 as controls**, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
-
-for scenarios 28 - 56 (all with sedation cohort as controls):
 28. Motif= 3, Window=4, MinCount=2
 29. Motif= 3, Window=4, MinCount=5
 30. Motif= 3, Window=5, MinCount=2
