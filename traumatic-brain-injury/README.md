@@ -1,5 +1,6 @@
 # Using BCR sequences for classification of pediatric TBI
 
+
 editing the max snippet model to use the BCR sequences from pediatric TBI patients. copied files from breast cancer directory to begin working with TBI data. 
 
 Change Log:
@@ -44,33 +45,32 @@ Making edits based on performance of scenarios 1-21
 J
 27. MOTIF length = 4 with window size = 6, d9 study data, **using d1 as controls**, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 
-for scenarios 28 - 56:
-Run 28: Motif= 3, Window=4, MinCount=2
-Run 29: Motif= 3, Window=4, MinCount=5
-Run 30: Motif= 3, Window=5, MinCount=2
-Run 31: Motif= 3, Window=5, MinCount=5
-Run 32: Motif= 3, Window=6, MinCount=2
-Run 33: Motif= 3, Window=6, MinCount=5
-Run 34: Motif= 3, Window=7, MinCount=2
-Run 35: Motif= 3, Window=7, MinCount=5
-Run 36: Motif= 3, Window=8, MinCount=2
-Run 37: Motif= 3, Window=8, MinCount=5
-Run 38: Motif= 4, Window=4, MinCount=2
-Run 39: Motif= 4, Window=4, MinCount=5
-Run 40: Motif= 4, Window=5, MinCount=2
-Run 41: Motif= 4, Window=5, MinCount=5
-Run 42: Motif= 4, Window=6, MinCount=2
-Run 43: Motif= 4, Window=6, MinCount=5
-Run 44: Motif= 4, Window=7, MinCount=2
-Run 45: Motif= 4, Window=7, MinCount=5
-Run 46: Motif= 4, Window=8, MinCount=2
-Run 47: Motif= 4, Window=8, MinCount=5
-Run 48: Motif= 5, Window=5, MinCount=2
-Run 49: Motif= 5, Window=5, MinCount=5
-Run 50: Motif= 5, Window=6, MinCount=2
-Run 51: Motif= 5, Window=6, MinCount=5
-Run 52: Motif= 5, Window=7, MinCount=2
-Run 53: Motif= 5, Window=7, MinCount=5
-Run 54: Motif= 5, Window=8, MinCount=2
-Run 55: Motif= 5, Window=8, MinCount=5
-all with sedation cohort as controls
+for scenarios 28 - 56 (all with sedation cohort as controls):
+28. Motif= 3, Window=4, MinCount=2
+29. Motif= 3, Window=4, MinCount=5
+30. Motif= 3, Window=5, MinCount=2
+31. Motif= 3, Window=5, MinCount=5
+32. Motif= 3, Window=6, MinCount=2
+33. Motif= 3, Window=6, MinCount=5
+34. Motif= 3, Window=7, MinCount=2
+35. Motif= 3, Window=7, MinCount=5
+36. Motif= 3, Window=8, MinCount=2
+37. Motif= 3, Window=8, MinCount=5
+38. Motif= 4, Window=4, MinCount=2
+39. Motif= 4, Window=4, MinCount=5
+40. Motif= 4, Window=5, MinCount=2
+41. Motif= 4, Window=5, MinCount=5
+42. Motif= 4, Window=6, MinCount=2
+43. Motif= 4, Window=6, MinCount=5
+44. Motif= 4, Window=7, MinCount=2
+45. Motif= 4, Window=7, MinCount=5
+46. Motif= 4, Window=8, MinCount=2
+47. Motif= 4, Window=8, MinCount=5
+48. Motif= 5, Window=5, MinCount=2
+49. Motif= 5, Window=5, MinCount=5
+50. Motif= 5, Window=6, MinCount=2
+51. Motif= 5, Window=6, MinCount=5
+52. Motif= 5, Window=7, MinCount=2
+53. Motif= 5, Window=7, MinCount=5
+54. Motif= 5, Window=8, MinCount=2
+55. Motif= 5, Window=8, MinCount=5
