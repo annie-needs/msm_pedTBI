@@ -8,13 +8,11 @@ import pandas as pd
 
 parent_dir = os.getcwd()
 
-output_csv = 'scenario_comparisons_18Feb2026.csv'
+output_csv = 'scenario_comparisons_23Feb2026_train.csv'
 
 rows = []
 
 for i in range(1, 56):
-    if i == 36:
-        continue
 
     scenario_name = f'scenario{i}'
     print(scenario_name)
@@ -26,7 +24,7 @@ for i in range(1, 56):
         df = pd.read_csv(report_path)
 
         if df.shape[0] > 1:
-            best_row = df.loc[df['Cost_Val'].idxmin()].copy()
+            best_row = df.loc[df['Cost_train'].idxmin()].copy()
             best_row['Scenario'] = scenario_name
         
             rows.append(best_row)

@@ -42,7 +42,6 @@ Making edits based on performance of scenarios 1-21
 24. MOTIF length = 3 with window size = 5, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 25. MOTIF length = 5 with window size = 7, d9 study data, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 26. MOTIF length = 4 with window size = 6, d9 study data, removing low quantity **CDRs** (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
-J
 27. MOTIF length = 4 with window size = 6, d9 study data, **using d1 as controls**, removing low quantities (<5), removing control kmers from cases but keeping overlap kmers in the holdout sample
 28. Motif= 3, Window=4, MinCount=2
 29. Motif= 3, Window=4, MinCount=5
