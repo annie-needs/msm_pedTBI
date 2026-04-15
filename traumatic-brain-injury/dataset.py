@@ -161,6 +161,17 @@ def split_samples(samples, holdouts):
       samples_val.append(sample)
   return samples_train, samples_val
 
+def split_samples_TrainAllPX(samples, holdouts):
+  samples_train = []
+  samples_val = []
+  for sample in samples:
+    # put all samples in the sample_train set. 
+    samples_train.append(sample)
+    # Put a holdout sample in the sample_val set to maintain model compatibility with the original code. Model selection is based on best training performance so the sample_val set is not used for model selection.
+    if sample['subject'] in holdouts:
+      samples_val.append(sample)
+  return samples_train, samples_val
+
 def weight_samples(samples):
   num_case = 0
   num_control = 0
